@@ -10,13 +10,16 @@ function removeDuplicate(numbers) {
 
     if (!Array.isArray(numbers)) throw "Invalid input, input should be an Array.";
 
-    let output = new Set(numbers)
-    numbers = []
-
-    for (number of output) {
-        numbers.push(number)
+    ans = [];
+    for (let number of numbers){
+        if(number in ans){
+            continue;
+        }else{
+            ans.push(number);
+        }
     }
-    return numbers.sort()
+    
+    return ans;
 }
 
 function main() {

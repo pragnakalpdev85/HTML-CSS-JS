@@ -14,9 +14,19 @@ function secondLargest(numbers) {
 
     if (flag.length != 0) throw "Invalid array elements, Array must contain Number values.";
 
-    let output = numbers.sort((a, b) => b-a );
+    let largest = Number.MIN_VALUE;
+    let second = Number.MIN_VALUE;
 
-    return output[1];
+    for(let number of numbers){
+        if(number > largest){
+            second = largest
+            largest = number
+        }else if(number > second && number != largest){
+            second = number
+        }
+    }
+
+    return second;
 }
 
 function main() {
