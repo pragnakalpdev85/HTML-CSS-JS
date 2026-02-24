@@ -241,35 +241,6 @@ button:hover {
     width: 120px;
 }
 
-.hidebox{
-    position: absolute;
-    visibility: hidden;
-}
-
-.confirmbox {
-    position: absolute;
-    justify-self: center;
-    align-self: center;
-    border: 2px solid black;
-    border-radius: 15px;
-    width: 280px;
-    padding: 20px;
-    background-color: rgb(207, 218, 228);
-}
-
-.confirmbox > div {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 10px;
-}
-
-.message {
-    font-size: large;
-    font-weight: bold;
-    text-align: center;
-}
-
 @media (max-width: 1280px){
    
     .expense {
