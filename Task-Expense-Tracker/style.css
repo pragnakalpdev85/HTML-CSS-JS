@@ -1,0 +1,397 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: aliceblue;
+}
+
+main {
+    width: 90%;
+    height: 90vh;
+    border: 2px solid rgb(73, 84, 100);
+    border-radius: 20px;
+    padding: 15px;
+    overflow-y:hidden;
+    background-color: white;
+    box-shadow: 0 0 20px rgb(9, 99, 126);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    padding: 0.2em;
+    font-size: xx-large;
+    font-weight: bolder;
+}
+
+.menu-bar {
+    width: 100% - calc(20px);
+    height: auto;
+    border-radius: 15px;
+    padding: 10px;
+    border: 2px solid rgb(73, 84, 100);
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.3);
+}
+
+.input-box , .filter-box{
+    margin: 10px 0px;
+    padding: 10px;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.filter-box {
+    margin: 0;
+}
+
+.input-box {
+    border-bottom: 1px solid rgb(73, 84, 100);
+}
+
+p {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+label{
+    font-size: large;
+}
+
+input, select{
+    font-size: large;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid black;
+    padding: 3px;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.7;
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.3);
+    min-width: 200px;
+}
+
+select {
+    height: 40px;
+}
+
+button {
+    font-size: large;
+    color: white;
+    border: none;
+    background-color: rgb(9, 99, 126);
+    font-weight: bold;
+    height: 40px;
+    width: 120px;
+    border-radius: 10px;
+}
+
+.filter {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-self: center;
+    justify-content: space-evenly;
+    gap: 20px;
+    border-radius: 10px;
+    border: 1px solid rgb(73, 84, 100);
+    width: 80%;
+    padding: 10px;
+    align-items: center;
+    background: linear-gradient(rgb(9, 99, 126), rgb(122, 178, 178));
+}
+
+.filter > div {
+    min-width: 250px;
+}
+
+#filter-btn {
+    width: 200px;
+    border: 1px solid white;
+}
+
+.filter-tag {
+    color: white;
+}
+
+.expense-table {
+    margin-top: 20px;
+    border-radius: 10px;
+    border: 2px solid rgb(83, 83, 83);
+    box-shadow: 0 0 20px rgb(0, 0, 0, 0.3);
+    overflow: scroll;
+}
+
+.heading {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1.5fr;
+    font-weight: bold;
+    font-size: x-large;
+    gap: 20px;
+    padding: 15px;
+    min-width: 820px;
+    border-bottom: 2px solid black;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    background: linear-gradient(rgb(9, 99, 126), rgb(122, 178, 178));
+}
+
+.heading > div {
+    min-width: 120px;
+}
+
+#addbtn {
+    margin-top: 18px;
+}
+
+#expenses {
+    height: 480px;
+    min-width: 850px;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.expense {
+    display: grid;
+    grid-template-columns: 2fr 2fr 1fr 1fr 1.5fr;
+    gap: 20px;
+    font-size: 20px;
+    border-bottom: 2px solid black;
+}
+
+
+.expense > div{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-width: 120px;
+    padding: 15px;
+}
+
+.title-category ,.date-output{
+    font-size: larger;
+}
+
+.amount-output {
+    font-size: x-large;
+}
+
+#edit-btn{
+    height: 30px;
+    margin-right: 10px;
+}
+
+#delete-btn{
+
+    height: 30px;
+} 
+
+button:hover {
+    opacity: 0.7;
+}
+
+.alert {
+    visibility: hidden;
+    height: 0;
+}
+
+.alert-show {
+    margin-top: 3px;
+    height: auto;
+    color: red;
+    font-size: medium;
+    margin: 0;
+    font-weight: bold;
+    visibility: visible; 
+}
+
+.emptyMsg {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+#filter-btn {
+    margin-top: 22px;
+}
+
+.total {
+    color: white;
+    font-weight: bold;
+    background: linear-gradient(rgb(9, 99, 126), rgb(122, 178, 178));
+}
+
+.editinputs1, .editinputs2 {
+    width: 280px;
+}
+
+.editinputs3, .editinputs4 {
+    width: 120px;
+}
+
+.hidebox{
+    position: absolute;
+    visibility: hidden;
+}
+
+.confirmbox {
+    position: absolute;
+    justify-self: center;
+    align-self: center;
+    border: 2px solid black;
+    border-radius: 15px;
+    width: 280px;
+    padding: 20px;
+    background-color: rgb(207, 218, 228);
+}
+
+.confirmbox > div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+
+.message {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media (max-width: 1280px){
+   
+    .expense {
+        font-size: large;
+    }
+
+    .heading {
+        font-size: large;
+    }
+
+    main {
+        overflow-y: scroll;
+    }
+
+    #edit-btn{
+        height: 30px;
+        font-size: medium;
+        margin-right: 10px;
+        width: 70px;
+        margin-bottom: 5px;
+    }
+
+    #delete-btn{
+        height: 30px;
+        font-size: medium;
+        width: 70px;
+    } 
+    
+    .input-box {
+        justify-self: center;
+    }
+
+    .editinputs1, .editinputs2 {
+        width: 200px;
+    }
+
+    .editinputs3, .editinputs4 {
+        width: 100px;
+    }
+}
+
+@media (max-width: 1000px){
+    .editinputs1, .editinputs2 {
+        width: 150px;
+    }
+
+    .editinputs3, .editinputs4 {
+        width: 100px;
+    }
+}
+
+@media(max-width: 800px) {
+    #addbtn {
+        margin-top: 0px;
+    }
+
+
+    .input-box , .filter-box{
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-left: 30px;
+        justify-items: center;
+    }
+
+    button {
+        justify-self: center;
+        align-self: center;
+    }
+
+    select {
+        width: 240px;
+    }
+
+    #date-input{
+        width: 230px;
+    }
+
+    .expense {
+        font-size: medium;
+    }
+
+    .heading {
+        font-size: large;
+    }
+}
+
+@media(max-width: 500px) {
+    .input-box , .filter-box{
+        padding-left: 10px;
+    }
+
+    .filter-box, .input-box {
+        margin-left: 0;
+        margin-right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .expense {
+        font-size: large;
+    }
+
+    .heading {
+        font-size: large;
+    }
+}
+
+@media (max-width: 380px){
+    input {
+        width: 200px;
+    }
+
+    select {
+        width: 205px;
+    }
+
+    #date-input{
+        width: 200px;
+    }
+
+}

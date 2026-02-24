@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <div class="logo">Expense Tracker</div>
+        <div class="menu-bar">
+            <div class="input-box">
+                <p>Add Expense</p>
+                <div class="description">
+                    <label for="description-input"><strong>Title:</strong></label>
+                    <div>
+                        <input type="text" id="title-input">
+                        <div class="alert" id="alert-title-input">Title field is required.</div>
+                    </div>
+                </div>
+                <div class="amount">
+                    <label for="amount"><strong>Amount:</strong></label>
+                    <div>
+                        <input type="number" id="amount-input">
+                        <div class="alert" id="alert-amount-input">Amount field is required.</div>
+                    </div>
+                </div>
+                <div class="category">
+                    <label for='category'> <strong>Choose Category:</strong></label>
+                    <div>
+                        <select name="category" id="category-input">
+                            <option value="">Select Category</option>
+                            <option value="Housing & Utilities">Housing & Utilities </option>
+                            <option value="Food & Groceries">Food & Groceries </option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Healthcare & Personal Care">Healthcare & Personal Care</option>
+                            <option value="Debt & Financial Obligations">Debt & Financial Obligations</option>
+                            <option value="Lifestyle & Entertainment">Lifestyle & Entertainment</option>
+                            <option value="Clothing & Personal Items">Clothing & Personal Items</option>
+                            <option value="Family & Dependents">Family & Dependents</option>
+                            <option value="Savings & Investing">Savings & Investing</option>
+                            <option value="Giving & Miscellaneous">Giving & Miscellaneous</option>
+                        </select>
+                        <div class="alert" id="alert-category-input">Category field is required.</div>
+                    </div>
+                </div>
+                <div class="date">
+                    <label for="date"><strong>Date:</strong></label>
+                    <div>
+                        <input type="date" name="date" id="date-input" class="date-input">
+                        <div class="alert" id="alert-date-input">Date field is required.</div>
+                    </div>
+                </div>
+                <button class="add" type="submit" id="addbtn" style="width: 180px;" onclick="addExpenses()">Add</button>
+            </div>
+
+            <div class="filter-box">
+                <div class="filter">
+                    <div>
+                        <p class="filter-tag">Amount Filter</p>
+                        <input type="number" id="amount-filter-input" placeholder="Enter Amount">
+                    </div>
+                    <div>
+                        <p class="filter-tag">Category Filter</p>
+                        <select name="category" id="category-filter-input" >
+                            <option value="">Select Category</option>
+                            <option value="Housing & Utilities">Housing & Utilities </option>
+                            <option value="Food & Groceries">Food & Groceries </option>
+                            <option value="Transportation">Transportation</option>
+                            <option value="Healthcare & Personal Care">Healthcare & Personal Care</option>
+                            <option value="Debt & Financial Obligations">Debt & Financial Obligations</option>
+                            <option value="Lifestyle & Entertainment">Lifestyle & Entertainment</option>
+                            <option value="Clothing & Personal Items">Clothing & Personal Items</option>
+                            <option value="Family & Dependents">Family & Dependents</option>
+                            <option value="Savings & Investing">Savings & Investing</option>
+                            <option value="Giving & Miscellaneous">Giving & Miscellaneous</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p class="filter-tag">Date Filter</p>
+                        <input type="date" id="date-filter-input">
+                    </div>
+                    <button id="filter-btn" onclick="filter()">Filter</button>
+                </div>  
+            </div>
+            <div class="alert" id="alert-filter-input">Please fill in at least one field to Filter.</div>
+        </div>
+
+        <div class="hidebox" id="box">
+            <div class="message">
+                Are you sure you want to delete this expense?
+            </div>
+            <div>
+                <button id="cancel">No</button>
+                <button id="ok">Yes</button>
+            </div>
+        </div>
+
+        <div class="expense-table">
+            <div class="heading">
+                <div>Title</div>
+                <div>Category</div>
+                <div>Amount</div>
+                <div>Date</div>
+                <div>Actions</div>
+            </div>
+            <div id="expenses">
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
